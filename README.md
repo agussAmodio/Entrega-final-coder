@@ -1,5 +1,11 @@
 # Ecommerce Backend
 
+## deployment
+
+```bash
+  entrega-final-coder-production.up.railway.app
+```
+
 ## Instalacion
 
 Se necesita tener descargado NodeJS.
