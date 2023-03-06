@@ -27,7 +27,7 @@ usersCtrl.registro = async (req, res) => {
 
   if (password != confirm_password) {
     req.flash("error_msg", "las contraseñas no coinciden.");
-    return res.redirect("/users/registro");
+    return res.redirect("/usuario/registro");
   }
 
   const emailsUser = await User.findOne({ email: email });
