@@ -32,7 +32,7 @@ carritosCtrl.deleteProductCarrito = async (req, res) => {
       {},
       { productos: productosDelCarrito }
     );
-    res.status(200).redirect("http://localhost:8080/carritos");
+    res.status(200).redirect("/carritos");
   }
 };
 
@@ -80,7 +80,7 @@ carritosCtrl.addProductoCarrito = async (req, res) => {
 carritosCtrl.botonFinalizar = async (req, res) => {
   const carrito = await Carrito.findOne();
   if (!carrito || carrito.productos.length == 0) {
-    res.status(404).redirect("http://localhost:8080/productos");
+    res.status(404).redirect("/productos");
   } else {
     await Carrito.deleteOne({ _id: carrito._id });
     const nuevaOrden = new Ordenes({
@@ -121,7 +121,7 @@ carritosCtrl.botonFinalizar = async (req, res) => {
       if (error) {
         res.status(500).send(error.message);
       } else {
-        res.status(200).jsonp(req.body);
+        res.status(200).json(req.body);
       }
     });*/
   }

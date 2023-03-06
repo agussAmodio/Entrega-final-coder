@@ -3,5 +3,5 @@ botonFinalizar.addEventListener("click", async () => {
     method: "POST",
   });
 
-  window.location.href = "http://localhost:8080/carritos";
+  window.location.href = "/carritos";
 });
