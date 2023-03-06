@@ -1,6 +1,6 @@
 # Ecommerce Backend
 
-## deployment
+## Deployment
 
 ```bash
   entrega-final-coder-production.up.railway.app
