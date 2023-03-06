@@ -1,0 +1,21 @@
+<div class="row row-cols-1 row-cols-md-3 g-2">
+  {{#each productoEncontrado}}
+    <div class="col">
+      <div class="card h-100 text-white" style="background-color: #6441a5">
+        <h6 class="card-title mx-auto">{{nombre}}</h6>
+        <img src="{{foto}}" class="card-img-top" alt="{{nombre}}" />
+        <div class="card-body">
+          <h3 class="card-text p-2 g-col-6">$ {{precio}}</h3>
+          <h6 class="card-text p-2 g-col-6">{{descripcion}}</h6>
+          <h6 class="card-text p-2 g-col-6">ID: {{_id}}</h6>
+        </div>
+        <form action="/products-cart/{{_id}}" method="POST">
+          <div class="card-footer d-grid gap-2">
+            <button type="submit" class="btn btn btn-dark">Agregar al carrito</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  {{/each}}
+
+</div>

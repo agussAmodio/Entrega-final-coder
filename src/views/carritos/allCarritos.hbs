@@ -1,0 +1,61 @@
+<h1 class="text-white text-center">Lista de carritos</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th
+        class="text-white align-middle col-4 col-md-2 mx-auto text-center"
+      >Imagen</th>
+      <th
+        class="text-white align-middle col-8 col-md-4 mx-auto text-center"
+      >Nombre</th>
+      <th
+        class="text-white align-middle col-md-2 mx-auto text-center"
+      >Precio</th>
+      <th
+        class="text-white align-middle col-md-2 mx-auto text-center"
+      >Cantidad</th>
+      <th
+        class="text-white align-middle col-md-4 mx-auto text-end"
+      >Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each productosDelCarrito}}
+      <tr>
+        <td class="text-white align-middle col-4 col-md-2 mx-auto"><img
+            src="{{this.foto}}"
+            width="150"
+            height="150"
+          /></td>
+        <td
+          class="text-white align-middle col-8 col-md-4 mx-auto text-start"
+        >{{this.nombre}}</td>
+        <td
+          class="text-white align-middle col-md-2 mx-auto text-center"
+        >${{this.precio}}</td>
+        <td
+          class="text-white align-middle col-8 col-md-4 mx-auto text-center"
+        >{{this.cantidadProdCarrito}}</td>
+        <td class="text-white align-middle col-md-4 mx-auto text-end">
+
+          <form
+            action="/carritos/producto/{{this._id}}?_method=DELETE"
+            method="POST"
+          >
+            <input type="hidden" name="_method" value="DELETE" />
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+          </form>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+<div class="card-footer d-grid gap-2">
+  <button
+    id="botonFinalizar"
+    type="submit"
+    class="btn bg-personalizado"
+  >Finalizar Compra</button>
+</div>
+
+<script src="/botonFinalizar.js"></script>
